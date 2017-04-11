@@ -1,0 +1,48 @@
+﻿@model MVC.Areas.Gerencial.Models.GrupoProduto.GrupoProdutoViewModel
+@{
+    ViewBag.Title = "Alterar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="page-header">Alterar<small>&emsp; Grupo de produtos</small></h3>
+
+@using (Html.BeginForm("Alterar", "GrupoProduto", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <a href="@Url.Action("Index","GrupoProduto")" class="btn btn-sm btn-primary">
+                Voltar &emsp;<i class="glyphicon glyphicon-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="Id" class="col-lg-2 control-label">Id</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly= true })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Descricao" class="col-lg-2 control-label">Descrição</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.Descricao, new { @class = "form-control", @placeholder = "Descrição", @maxlength = "60" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Status" class="col-lg-2 control-label">Ativo</label>
+        <div class="col-lg-6">
+            @Html.CheckBoxFor(x => x.Status, new { @class = "form-control checkbox-switch" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <button type="submit" id="BtnSalvar" class="btn btn-lg btn-success">Salvar &emsp;<i class="glyphicon glyphicon-floppy-saved"></i></button>            
+        </div>
+    </div>
+}
+

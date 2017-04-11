@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Automação Comercial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+
+    @Styles.Render("~/Content/_Layout")
+    @Scripts.Render("~/bundles/_Layout")
+
+    @{
+        var port = ViewContext.HttpContext.Request.Url.Port != 80 ? (":" + ViewContext.HttpContext.Request.Url.Port) : String.Empty;
+        var url = $"http://{ViewContext.HttpContext.Request.Url.Host}{port}{VirtualPathUtility.ToAbsolute("~/")}";
+    }
+    <script type="text/javascript">
+        var content = '@url';
+        function closeWindow() {
+            jQuery.post(content + "Account/LogOff")
+            .success(function (data) {
+                var fechar = window.open(window.location, "_self");
+                fechar.close();
+            });
+        }
+    </script>
+</head>
+
+<body class="flat-blue">
+    <div class="app-container">
+        <div class="row content-container">
+
+            @Html.Partial("_MenuSuperior")
+            @Html.Partial("_MenuLateral")
+
+            <div class="container-fluid">
+                <div class="side-body">
+                    @Html.Partial("_MensagemPartial")
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        @Html.Partial("_Footer")
+    </div>
+</body>
+</html>

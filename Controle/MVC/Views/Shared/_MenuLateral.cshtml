@@ -1,0 +1,72 @@
+﻿<div class="side-menu sidebar-inverse">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="side-menu-container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Action("Index","Vendas", new { area = "Gerencial" })">
+                    <div class="icon fa fa-home"></div>
+                    <div class="title">Inicio</div>
+                </a>
+                <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                    <i class="fa fa-times icon"></i>
+                </button>
+            </div>
+            <ul class="nav navbar-nav">
+
+                <li>
+                    <a href="@Url.Action("Index","Clientes", new { area="Gerencial"})">
+                        <span class="icon fa fa-users"></span><span class="title">Clientes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index","Fornecedor", new { area="Gerencial"})">
+                        <span class="icon fa fa-truck"></span><span class="title">Fornecedores</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Consultar","Vendas", new { area="Gerencial"})">
+                        <span class="icon fa fa-money"></span><span class="title">Vendas</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index","Compras", new { area="Gerencial"})">
+                        <span class="icon fa fa-shopping-cart"></span><span class="title">Compras</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index","Estoque", new { area="Gerencial"})">
+                        <span class="icon fa fa-database"></span><span class="title">Estoque</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index","Produtos", new { area="Gerencial"})">
+                        <span class="icon fa fa-list-alt "></span><span class="title">Produtos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index","GrupoProduto", new { area="Gerencial"})">
+                        <span class="icon fa fa-cube"></span><span class="title">Grupos de Produtos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index","SubGrupoProdutos", new { area="Gerencial"})">
+                        <span class="icon fa fa-cubes"></span><span class="title">SubGrupos de Produtos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index","Relatorio", new { area="Gerencial"})">
+                        <span class="icon fa fa-print"></span><span class="title">Relatórios</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+

@@ -1,0 +1,70 @@
+﻿@model MVC.Areas.Gerencial.Models.Vendas.VendasViewModel
+
+<h3 align="right">Pedido Nº: @Model.NumeroPedido</h3>
+<img src="@Model.ImageUrl" width="64" height="64" />
+<br />
+<h2>Destak Presente</h2>
+
+<p align="left" style="font-size:small">Rua: Padre Mussa Tuma, 788, Jardim Itamaraca</p>
+<p align="left" style="font-size:small">Campo Grande - MS, 79062-120</p>
+<br />
+
+<div align="right" class="control-group col-lg-1">
+    <label class="control-label">Data Venda: </label>
+    @Html.DisplayFor(x => x.DataVenda)
+</div>
+
+<div class="control-group col-lg-2">
+    <label class="control-label">Cliente:&nbsp;</label>
+    @Html.DisplayFor(x => x.ClienteDescricao)
+</div>
+<div class="control-group col-lg-2">
+    <label class="control-label">CPF/CNPJ:&nbsp;</label>
+    @Html.DisplayFor(x => x.CpfCnpjCLiente)
+</div>
+<div class="control-group col-lg-2">
+    <label class="control-label">Fone:&nbsp;</label>
+    @Html.DisplayFor(x => x.TelefoneCliente)
+</div>
+
+<div class="col-lg-12">
+    <br />
+</div>
+<table class="table table-bordered table-condensed" cellpadding="3" cellspacing="3">
+    <thead>
+        <tr border="1" bgcolor="#fbfbfb" color="#000000"><th colspan="5" style="text-align:center; font-weight:bold">Itens do Pedido</th></tr>
+        <tr border="1" bgcolor="#fbfbfb" color="#000000">
+            <th style="font-weight:bold">Código</th>
+            <th style="font-weight:bold">Produto</th>
+            <th style="font-weight:bold">Qtd</th>
+            <th style="font-weight:bold">Valor Unidade</th>
+            <th style="font-weight:bold">Valor Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var OddColor = "#eeeeee";
+            var evenColor = "#fbfbfb";
+            var Odd = OddColor;
+        }
+        @foreach (var item in Model.ListaVendas)
+            {
+            <tr border="1">
+                <td>@item.CodigoBarra</td>
+                <td>@item.Descricao</td>
+                <td>@item.Quantidade</td>
+                <td align="right">@item.ValorItemFormatado</td>
+                <td align="right">@item.TotalItemFormatado</td>
+            </tr>
+            if (Odd == OddColor)
+            {
+                Odd = evenColor;
+            }
+            else
+            {
+                Odd = OddColor;
+            }
+        }
+        <tr border="1" bgcolor="#fbfbfb" color="#000000"><th colspan="5" style="text-align:right; font-weight:bold">Total:&nbsp;@Model.SubTotal</th></tr>
+    </tbody>
+</table>

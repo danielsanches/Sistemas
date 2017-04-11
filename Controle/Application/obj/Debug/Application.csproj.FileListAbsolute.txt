@@ -1,0 +1,15 @@
+C:\TFS\Sistemas\Controle\Application\bin\Debug\Application.dll.config
+C:\TFS\Sistemas\Controle\Application\bin\Debug\Application.dll
+C:\TFS\Sistemas\Controle\Application\bin\Debug\Application.pdb
+C:\TFS\Sistemas\Controle\Application\bin\Debug\Domain.dll
+C:\TFS\Sistemas\Controle\Application\bin\Debug\EntityFramework.dll
+C:\TFS\Sistemas\Controle\Application\bin\Debug\EntityFramework.SqlServer.dll
+C:\TFS\Sistemas\Controle\Application\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\TFS\Sistemas\Controle\Application\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\TFS\Sistemas\Controle\Application\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\TFS\Sistemas\Controle\Application\bin\Debug\Domain.pdb
+C:\TFS\Sistemas\Controle\Application\bin\Debug\EntityFramework.xml
+C:\TFS\Sistemas\Controle\Application\bin\Debug\EntityFramework.SqlServer.xml
+C:\TFS\Sistemas\Controle\Application\obj\Debug\Application.csprojResolveAssemblyReference.cache
+C:\TFS\Sistemas\Controle\Application\obj\Debug\Application.dll
+C:\TFS\Sistemas\Controle\Application\obj\Debug\Application.pdb

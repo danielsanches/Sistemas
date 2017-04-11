@@ -1,0 +1,42 @@
+﻿<script type="text/javascript">
+    function PosicionarTopoPagina() {
+        jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
+    }
+</script>
+@if (TempData.Any(p => p.Key == "Sucesso"))
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+        <strong>Sucesso!</strong>
+        @foreach (var msg in TempData.Where(p => p.Key == "Sucesso"))
+        {
+            @msg.Value
+        }
+    </div>
+}
+@if (TempData.Any(p => p.Key == "Erro"))
+{
+    <script>PosicionarTopoPagina();</script>
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+        <strong>Erro!</strong>
+        @foreach (var msg in TempData.Where(p => p.Key == "Erro"))
+        {
+            @msg.Value
+        }
+    </div>
+}
+@if (TempData.Any(p => p.Key == "Alerta"))
+{
+    <script>PosicionarTopoPagina();</script>
+    <div class="alert alert-warning" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+        <strong>Alerta!</strong>
+        @foreach (var msg in TempData.Where(p => p.Key == "Alerta"))
+        {
+            @msg.Value
+        }
+    </div>
+}
+
+

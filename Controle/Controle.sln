@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{2D19BD4A-05D3-464B-845F-C7F3B59DA4FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{D1197AC8-54EE-4708-8369-7C9645B32254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{AA41D88A-F5F4-474E-9136-E30D2A2F7A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{3FA172C2-B816-48C6-AA1A-F5406AD8A870}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{DC917D07-3A61-425F-921A-763C16ED15AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlPdfReport", "HtmlPdfReport\HtmlPdfReport.csproj", "{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugLocal|Any CPU = DebugLocal|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D19BD4A-05D3-464B-845F-C7F3B59DA4FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D19BD4A-05D3-464B-845F-C7F3B59DA4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D19BD4A-05D3-464B-845F-C7F3B59DA4FE}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D19BD4A-05D3-464B-845F-C7F3B59DA4FE}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{2D19BD4A-05D3-464B-845F-C7F3B59DA4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D19BD4A-05D3-464B-845F-C7F3B59DA4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1197AC8-54EE-4708-8369-7C9645B32254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1197AC8-54EE-4708-8369-7C9645B32254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1197AC8-54EE-4708-8369-7C9645B32254}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1197AC8-54EE-4708-8369-7C9645B32254}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{D1197AC8-54EE-4708-8369-7C9645B32254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1197AC8-54EE-4708-8369-7C9645B32254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA41D88A-F5F4-474E-9136-E30D2A2F7A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA41D88A-F5F4-474E-9136-E30D2A2F7A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA41D88A-F5F4-474E-9136-E30D2A2F7A23}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA41D88A-F5F4-474E-9136-E30D2A2F7A23}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{AA41D88A-F5F4-474E-9136-E30D2A2F7A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA41D88A-F5F4-474E-9136-E30D2A2F7A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA172C2-B816-48C6-AA1A-F5406AD8A870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA172C2-B816-48C6-AA1A-F5406AD8A870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA172C2-B816-48C6-AA1A-F5406AD8A870}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA172C2-B816-48C6-AA1A-F5406AD8A870}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{3FA172C2-B816-48C6-AA1A-F5406AD8A870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA172C2-B816-48C6-AA1A-F5406AD8A870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC917D07-3A61-425F-921A-763C16ED15AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC917D07-3A61-425F-921A-763C16ED15AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC917D07-3A61-425F-921A-763C16ED15AF}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC917D07-3A61-425F-921A-763C16ED15AF}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{DC917D07-3A61-425F-921A-763C16ED15AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC917D07-3A61-425F-921A-763C16ED15AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://danielsanchees.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Application\\Application.csproj
+		SccProjectName1 = Application
+		SccLocalPath1 = Application
+		SccProjectUniqueName2 = Domain\\Domain.csproj
+		SccProjectName2 = Domain
+		SccLocalPath2 = Domain
+		SccProjectUniqueName3 = Infra\\Infra.csproj
+		SccProjectName3 = Infra
+		SccLocalPath3 = Infra
+		SccProjectUniqueName4 = MVC\\MVC.csproj
+		SccProjectName4 = MVC
+		SccLocalPath4 = MVC
+		SccProjectUniqueName5 = UnitTest\\UnitTest.csproj
+		SccProjectName5 = UnitTest
+		SccLocalPath5 = UnitTest
+		SccProjectUniqueName6 = HtmlPdfReport\\HtmlPdfReport.csproj
+		SccProjectName6 = HtmlPdfReport
+		SccLocalPath6 = HtmlPdfReport
+	EndGlobalSection
+EndGlobal

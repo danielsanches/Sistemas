@@ -1,0 +1,21 @@
+﻿@model MVC.Areas.Gerencial.Models.Estoque.EstoqueViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="@Url.Content("~/Areas/Gerencial/Scripts/Estoque/Index.js")"></script>
+<div class="row-fluid col-lg-12">
+    <div class="page-header"><h3>Estoque <small>Consulta</small></h3></div>
+</div>
+<div class="row-fluid col-lg-12">
+    <table id="GridEstoque" class="display table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Código</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+    </table>
+</div>

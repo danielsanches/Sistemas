@@ -1,0 +1,69 @@
+﻿@model MVC.Areas.Gerencial.Models.Produtos.ProdutosViewModel
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="@Url.Content("~/Areas/Gerencial/Scripts/Produtos/Cadastrar.js")"></script>
+<h3 class="page-header">Cadastrar<small>&emsp; Produtos</small></h3>
+
+@using (Html.BeginForm("Cadastrar", "Produtos", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <a href="@Url.Action("Index","Produtos")" class="btn btn-sm btn-primary">
+                Voltar &emsp;<i class="glyphicon glyphicon-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Descricao" class="col-lg-2 control-label">Descrição</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.Descricao, new { @class = "form-control", @placeholder = "Nome do Produto", @maxlength = 125 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="CodigoBarra" class="col-lg-2 control-label">Código de Barras</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.CodigoBarra, new { @class = "form-control", @placeholder = "00000000000000000", @maxlength = 255 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="UidadeArmazenamento" class="col-lg-2 control-label">Unidade</label>
+        <div class="col-lg-3">
+            @Html.TextBoxFor(x => x.UidadeArmazenamento, new { @class = "form-control", @placeholder = "kg, gr, lt, etc..", @maxlength = 2 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="PercentualVenda" class="col-lg-2 control-label">% de Venda</label>
+        <div class="col-lg-3">
+            @Html.TextBoxFor(x => x.PercentualVenda, new { @class = "form-control", @placeholder = "Ex: 15%", @maxlength = 3 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="GrupoId" class="col-lg-2 control-label">Grupos</label>
+        <div class="col-lg-6">
+            @Html.DropDownListFor(x => x.GrupoProduto, new SelectList(Model.ListaGrupoProduto, "Id", "Descricao", Model.GrupoProduto), "", new { @class = "form-control", @id = "GrupoProduto" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="GrupoId" class="col-lg-2 control-label">Sub-Grupos</label>
+        <div class="col-lg-6">
+            @Html.DropDownListFor(x => x.SubGrupoProduto, new SelectList(Model.ListaSubGrupo, "Id", "Descricao", Model.SubGrupoProduto), "", new { @class = "form-control", @id = "ListaSubGrupo" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <button type="submit" id="BtnSalvar" class="btn btn-lg btn-success">Salvar &emsp;<i class="glyphicon glyphicon-floppy-saved"></i></button>
+        </div>
+    </div>
+
+}

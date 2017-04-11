@@ -1,0 +1,66 @@
+﻿@model MVC.Areas.Gerencial.Models.Vendas.VendasViewModel
+@{
+    ViewBag.Title = "Consultar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="@Url.Content("~/Areas/Gerencial/Scripts/Vendas/Consultar.js")"></script>
+@using (Html.BeginForm("Consultar", "Vendas", FormMethod.Post, new { @class = "form-horizontal", @id = "formulario" }))
+{
+    <div class="row-fluid col-lg-12">
+        <div class="page-header">
+            <h3>Consulta&ensp;<small>Vendas</small></h3>
+        </div>
+        <div class="row-fluid">
+            <a href="@Url.Action("Index", "Vendas")" class="btn btn-primary">Nova Venda</a>
+        </div>
+        <div class="col-lg-12"><br /></div>
+    </div>
+
+    <div class="control-group col-lg-2">
+        <label class="control-label">Período</label>
+        <div class="input-group date" id="datetimepickerInicio">
+            @Html.TextBoxFor(x => x.DataInicio, new { @class = "form-control", @placeholder = "dd/mm/aaaa", @maxlength = 10 })
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+        </div>
+    </div>
+
+    <div class="control-group col-lg-2">
+        <label class="control-label">&emsp;</label>
+        <div class="input-group date" id="datetimepickerFim">
+            @Html.TextBoxFor(x => x.DataFim, new { @class = "form-control", @placeholder = "dd/mm/aaaa", @maxlength = 10 })
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+        </div>
+    </div>
+
+    <div class="control-group col-lg-4">
+        <label class="control-label">Clientes</label>
+        <div class="controls">
+            @Html.DropDownListFor(x => x.ClienteId, new SelectList(Model.ListaClientes, "Id", "Nome", Model.ClienteId), "", new { @class = "form-control" })
+        </div>
+    </div>
+
+        <div class="control-group col-lg-12">
+            <div class="control-label">&nbsp;</div>
+            <div class="controls">
+                <a href="#" onclick="RecarregarComFiltro(); return false;" class="btn btn-info">Filtrar&nbsp; <i class="glyphicon glyphicon-filter"></i></a>
+                <a href="#" onclick="FiltroReset(); return false;" class="btn btn-default">Limpar&nbsp; <i class="glyphicon glyphicon-refresh"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-12"><br /></div>
+        <div class="row-fluid col-lg-12">
+            <div class="row-fluid">
+                <table id="GridVendas" class="display table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th width="5%"></th>
+                            <th width="10%">Id</th>
+                            <th width="15%">Data da Venda</th>
+                            <th width="25%">Cliente</th>
+                            <th width="20%">Total da Compra</th>
+                            <th width="10%" id="tdAcao">Ação</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+}

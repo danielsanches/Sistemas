@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DbAutomacao">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=SQL5026.SmarterASP.NET</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>9d2d5bc4-a905-44cb-b5a1-d1e35366a645</DataSourceID>
+</RptDataSource>

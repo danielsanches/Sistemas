@@ -1,0 +1,14 @@
+C:\TFS\Sistemas\Controle\Infra\bin\Debug\Infra.dll.config
+C:\TFS\Sistemas\Controle\Infra\bin\Debug\Infra.dll
+C:\TFS\Sistemas\Controle\Infra\bin\Debug\Infra.pdb
+C:\TFS\Sistemas\Controle\Infra\bin\Debug\Domain.dll
+C:\TFS\Sistemas\Controle\Infra\bin\Debug\EntityFramework.dll
+C:\TFS\Sistemas\Controle\Infra\bin\Debug\EntityFramework.SqlServer.dll
+C:\TFS\Sistemas\Controle\Infra\bin\Debug\Domain.pdb
+C:\TFS\Sistemas\Controle\Infra\bin\Debug\EntityFramework.xml
+C:\TFS\Sistemas\Controle\Infra\bin\Debug\EntityFramework.SqlServer.xml
+C:\TFS\Sistemas\Controle\Infra\obj\Debug\Infra.csprojResolveAssemblyReference.cache
+C:\TFS\Sistemas\Controle\Infra\obj\Debug\Infra.Migrations.firstMigration.resources
+C:\TFS\Sistemas\Controle\Infra\obj\Debug\Infra.csproj.GenerateResource.Cache
+C:\TFS\Sistemas\Controle\Infra\obj\Debug\Infra.dll
+C:\TFS\Sistemas\Controle\Infra\obj\Debug\Infra.pdb

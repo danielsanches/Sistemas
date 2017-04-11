@@ -1,0 +1,14 @@
+﻿@model  MVC.Areas.Gerencial.Models.Compras.ComprasItensViewModel
+<tr>
+    <td>@Model.ProdutoId</td>
+    <td>@Model.ProdutoDescricao</td>
+    <td>@Model.QtdProduto </td>
+    <td>@Model.ValorUn</td>
+    <td>@Model.ValorTotal</td>
+    <td><button type="submit" id="AcaoBotao" name="Cadastrar" value="Remover" class="btn btn-default btn-sm">Remover<i class="glyphicon glyphicon-remove"></i></button></td>
+</tr>
+@Html.HiddenFor(x => x.ProdutoId)
+@Html.HiddenFor(x => x.ProdutoDescricao)
+@Html.HiddenFor(x => x.QtdProduto)
+@Html.HiddenFor(x => x.ValorUn)
+@Html.HiddenFor(x => x.ValorTotal)

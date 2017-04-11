@@ -1,0 +1,74 @@
+﻿@model MVC.Areas.Gerencial.Models.Clientes.ClienteViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="@Url.Content("~/Areas/Gerencial/Scripts/Clientes/Index.js")"></script>
+
+<div class="row-fluid col-lg-12">
+    <div class="page-header"><h3>Clientes</h3></div>
+    <div class="row-fluid">
+        <a href="@Url.Action("Cadastrar","Clientes")" class="btn btn-primary">Cadastrar</a>
+    </div>
+    <div class="col-lg-12">
+        <br />
+    </div>
+</div>
+<div class="control-group col-lg-4">
+    <label for="Nome" class="control-label">Nome Cliente</label>
+    <div class="controls">
+        @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", @placeholder="ex: José da Silva Barbosa", @maxlength = 100 })
+    </div>
+</div>
+<div class="control-group col-lg-2">
+    <label for="DataNascimento" class="control-label">Mês Aniverssário</label>
+    <div class="input-group date" id="datetimepickerNascimento">
+        @Html.TextBoxFor(x => x.DataNascimento, new { @class = "form-control", @placeholder = "mm/aaaa", @maxlength = 10 })
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+</div>
+<div class="control-group col-lg-12">
+    <div class="control-label">&nbsp;</div>
+    <div class="controls">
+        <a href="#" onclick="CarregarAbasFiltro(); return false;" class="btn btn-info">Filtrar&nbsp; <i class="glyphicon glyphicon-filter"></i></a>
+        <a href="#" onclick="CarregarAbasFiltroReset(); return false;" class="btn btn-default">Limpar&nbsp; <i class="glyphicon glyphicon-refresh"></i></a>
+    </div>
+</div>
+<div class="col-lg-12">
+    <br />
+</div>
+<div class="row-fluid col-lg-12">
+    <section id="AbasView">
+        <div class="row-fluid" style="margin-top: 10px;">
+            <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active" id="ativo"><a href="#" id="ativo-tab" role="tab" data-toggle="tab" aria-controls="ativo" aria-expanded="true">Ativos ()</a></li>
+                <li role="presentation" class="" id="inativo"><a href="#" role="tab" id="inativo-tab" data-toggle="tab" aria-controls="inativo" aria-expanded="false">Inativos ()</a></li>
+            </ul>
+            <br />
+        </div>
+    </section>
+    <section id="TableView">
+        <div class="row-fluid">
+            <table id="GridClientes" class="display table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome Cliente</th>
+                        <th>Cpf</th>
+                        <th>Email</th>
+                        <th>Fone Movel 1</th>
+                        <th>Fone Movel 2</th>
+                        <th>Fone Fixo</th>
+                        <th>Data de Nascimento</th>
+                        <th>Data de Cadastro</th>
+                        <th id="tdAcao" style="text-align: center">Ação</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </section>
+</div>
+

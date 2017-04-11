@@ -1,0 +1,56 @@
+﻿@model MVC.Areas.Gerencial.Models.RelatorioViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="@Url.Content("~/Areas/Gerencial/Scripts/Relatorio/Index.js")"></script>
+<div class="row-fluid col-lg-12">
+    <div class="page-header">
+        <h3>Relatórios</h3>
+    </div>
+   
+</div>
+
+@using (Html.BeginForm("Index", "Relatorio", FormMethod.Post, new { id = "formRelatorio" }))
+{
+    <button type="submit">Renderizar</button>
+
+    <div class="control-group col-lg-2">
+        <label class="control-label">Período</label>
+        <div class="input-group date" id="datetimepickerInicio">
+            @Html.TextBoxFor(x => x.DataInicio, new { @class = "form-control", @placeholder = "dd/mm/aaaa", @maxlength = 10 })
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+        </div>
+    </div>
+
+    <div class="control-group col-lg-2">
+        <label class="control-label">&emsp;</label>
+        <div class="input-group date" id="datetimepickerFim">
+            @Html.TextBoxFor(x => x.DataFim, new { @class = "form-control", @placeholder = "dd/mm/aaaa", @maxlength = 10 })
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+        </div>
+    </div>
+
+    <div class="control-group col-lg-4">
+        <label for="ClienteId" class="control-label">Clientes</label>
+        <div class="controls">
+            @Html.DropDownListFor(x => x.ClienteId, new SelectList(Model.ListaClientes, "Id", "Nome", Model.ClienteId), "", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="control-group col-lg-4">
+        <label for="FornecedorId" class="control-label">Fornecedor</label>
+        <div class="controls">
+            @Html.DropDownListFor(x => x.FornecedorId, new SelectList(Model.ListaFornecedores, "Id", "NomeFantasia", Model.FornecedorId), "", new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="control-group col-lg-12">
+        <div class="control-label">&nbsp;</div>
+        <div class="controls">
+            <a href="#" onclick="RecarregarComFiltro(); return false;" class="btn btn-info">Filtrar&nbsp; <i class="glyphicon glyphicon-filter"></i></a>
+            <a href="#" onclick="FiltroReset(); return false;" class="btn btn-default">Limpar&nbsp; <i class="glyphicon glyphicon-refresh"></i></a>
+        </div>
+    </div>
+}
+

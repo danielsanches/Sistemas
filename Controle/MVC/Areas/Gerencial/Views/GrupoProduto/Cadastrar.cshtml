@@ -1,0 +1,33 @@
+﻿@model MVC.Areas.Gerencial.Models.GrupoProduto.GrupoProdutoViewModel
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="page-header">Cadastrar<small>&emsp; Grupo de Produtos</small></h3>
+
+@using (Html.BeginForm("Cadastrar", "GrupoProduto", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <a href="@Url.Action("Index","GrupoProduto")" class="btn btn-sm btn-primary">
+                Voltar &emsp;<i class="glyphicon glyphicon-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Descricao" class="col-lg-2 control-label">Descrição</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.Descricao, new { @class = "form-control", @placeholder = "Descrição", @maxlength = "60" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <button type="submit" id="BtnSalvar" class="btn btn-lg btn-success">Salvar &emsp;<i class="glyphicon glyphicon-floppy-saved"></i></button>            
+        </div>
+    </div>
+}

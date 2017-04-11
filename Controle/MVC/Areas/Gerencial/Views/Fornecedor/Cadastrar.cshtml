@@ -1,0 +1,54 @@
+﻿@model MVC.Areas.Gerencial.Models.Fornecedor.FornecedorViewModel
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="page-header">Cadastrar<small>&emsp; Fornecedor</small></h3>
+
+@using (Html.BeginForm("Cadastrar", "Fornecedor", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <a href="@Url.Action("Index","Fornecedor")" class="btn btn-sm btn-primary">Voltar &emsp;<i class="glyphicon glyphicon-arrow-left"></i></a>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="NomeFantasia" class="col-lg-2 control-label">Nome Fantasia</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.NomeFantasia, new { @class = "form-control", @placeholder = "Nome Fantasia", @maxlength = 100 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Email" class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "email@email.com.br", @maxlength = 100 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Celular" class="col-lg-2 control-label">Telefone Celular</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.Celular, new { @class = "form-control foneMask", @placeholder = "67 99999-0000", @maxlength = 13 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="FoneFixo" class="col-lg-2 control-label">Telefone Fixo</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.FoneFixo, new { @class = "form-control foneMask", @placeholder = "67 33333-0000", @maxlength = 13 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <button type="submit" id="BtnSalvar" class="btn btn-lg btn-success">Salvar &emsp;<i class="glyphicon glyphicon-floppy-saved"></i></button>
+        </div>
+    </div>
+}
+
+

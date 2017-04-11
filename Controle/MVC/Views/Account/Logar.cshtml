@@ -1,0 +1,39 @@
+﻿@model MVC.Models.AccountViewModel
+@{
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<div class="container">
+    <div class="login-box">
+        <div class="login-form row">
+
+            @Html.Partial("_MensagemPartial")
+            <div class="col-sm-12 text-center login-header">
+                <h4 class="login-title">Automação Comercial | Login</h4>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="login-body">
+                    @using (Html.BeginForm("Logar", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <div class="control">
+                            @Html.TextBoxFor(x => x.NomeLogin, new { @class = "form-control", @placeholder = "admin@gmail.com" })
+                        </div>
+                        <div class="control">
+                            @Html.TextBoxFor(x => x.Senha, new { @class = "form-control", @type = "password", @placeholder = "********" })
+                        </div>
+                        <div class="login-button text-center">
+                            <input type="submit" class="btn btn-primary" value="Login">
+                        </div>
+                    }
+                </div>
+                <div class="login-footer">
+                    <span class="text-right">
+                        <a href="#">Esqueceu a Senha?</a>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

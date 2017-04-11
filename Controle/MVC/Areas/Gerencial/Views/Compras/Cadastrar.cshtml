@@ -1,0 +1,87 @@
+﻿@model MVC.Areas.Gerencial.Models.Compras.ComprasViewModel
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="@Url.Content("~/Areas/Gerencial/Scripts/Compras/Cadastrar.js")"></script>
+<h3 class="page-header">Cadastrar<small>&emsp; Compra</small></h3>
+
+@using (Html.BeginForm("Cadastrar", "Compras", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="control-group col-lg-12">
+        <label for="BtnSalvar" class="control-label"></label>
+        <div class="controls">
+            <a href="@Url.Action("Index", "Compras")" class="btn btn-sm btn-primary">
+            Voltar &emsp;<i class="glyphicon glyphicon-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="control-group col-lg-2">
+        <label for="DataCompra" class="control-label">Data da Compra</label>
+        <div class="input-group date" id="datetimepickerCompra">
+            @Html.TextBoxFor(x => x.DataCompra, new { @class = "form-control", @placeholder = "dd/mm/aaaa", maxlength = 10 })
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+        </div>
+    </div>
+
+    <div class="control-group col-lg-5">
+        <label for="Fornecedor" class="control-label">Fornecedor</label>
+        @Html.DropDownListFor(x => x.FornecedorId, new SelectList(Model.ListaFornecedores, "Id", "NomeFantasia", Model.FornecedorId), "", new { @class = "form-control" })
+    </div>
+    <div class="col-lg-12"><br /></div>
+
+    <div class="row-fluid">
+        <div class="control-group col-lg-4">
+            <label for="Produto" class="control-label">Produtos</label>
+            @Html.DropDownListFor(x => x.Produto, new SelectList(Model.ListaProdutos, "Id", "Descricao", Model.Produto), "", new { @class = "form-control" })
+        </div>
+
+        <div class="control-group col-lg-1">
+            <label for="QtdProduto" class="control-label">Qtde</label>
+            @Html.TextBoxFor(x => x.QtdProduto, new { @class = "form-control", @placeholder = "0", @maxlength = 3 })
+        </div>
+
+        <div class="control-group col-lg-2">
+            <label for="ValorProduto" class="control-label">Valor</label>
+            @Html.TextBoxFor(x => x.ValorProduto, new { @class = "form-control", @placeholder = "0,00", @maxlength = 12 })
+        </div>
+
+        <div class="col-lg-12"><br /></div>
+        <div class="control-group col-lg-12">
+            <button type="submit" id="AcaoBotao" name="Cadastrar" value="Inserir" class="btn btn-primary">Inserir produto &emsp;<i class="glyphicon glyphicon-plus"></i></button>
+        </div>
+        <div class="col-lg-12"><br /></div>
+
+        <table class="table table-bordered table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Descricao</th>
+                    <th>Qtd</th>
+                    <th>Valor Un</th>
+                    <th>Valor Total</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.ListaProdutosCompra.Any())
+                {
+                    @Html.EditorFor(x => x.ListaProdutosCompra);
+                }
+                else
+                {
+                    <tr><td colspan="8" style="text-align:center">Nenhum item inserido na lista.</td></tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="control-group col-lg-12">
+            <label for="BtnSalvar" class="control-label"></label>
+            <div class="controls">
+                <button type="submit" id="AcaoBotao" name="Cadastrar" value="Salvar" class="btn btn-lg btn-success">Salvar Compra&emsp;<i class="glyphicon glyphicon-floppy-saved"></i></button>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D19BD4A-05D3-464B-845F-C7F3B59DA4FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Cliente\ClienteBusiness.cs" />
+    <Compile Include="Business\Cliente\RequestClienteBusiness.cs" />
+    <Compile Include="Business\Compras\ComprasBusiness.cs" />
+    <Compile Include="Business\Compras\ItensCompraBusiness.cs" />
+    <Compile Include="Business\Estoque\EstoqueBusiness.cs" />
+    <Compile Include="Business\Fornecedor\FornecedorBusiness.cs" />
+    <Compile Include="Business\Fornecedor\RequestFornecedorBusiness.cs" />
+    <Compile Include="Business\GrupoProduto\GrupoProdutoBusiness.cs" />
+    <Compile Include="Business\GrupoProduto\RequestGrupoProdutoBusiness.cs" />
+    <Compile Include="Business\Produto\ProdutoBusiness.cs" />
+    <Compile Include="Business\Produto\RequestProdutoBusiness.cs" />
+    <Compile Include="Business\SubGrupoProduto\RequestSubGrupoBusiness.cs" />
+    <Compile Include="Business\SubGrupoProduto\SubGrupoProdutoBusiness.cs" />
+    <Compile Include="Business\Usuario\Criptografia.cs" />
+    <Compile Include="Business\Usuario\RequestUsuarioBusiness.cs" />
+    <Compile Include="Business\Usuario\UsuarioBusiness.cs" />
+    <Compile Include="Business\ValidacoesCadastro.cs" />
+    <Compile Include="Business\Vendas\VendasBusiness.cs" />
+    <Compile Include="Enum\EnumSituacao.cs" />
+    <Compile Include="Interfaces\IApplicationService.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Compra.cs" />
+    <Compile Include="Model\Estoque.cs" />
+    <Compile Include="Model\Fornecedor.cs" />
+    <Compile Include="Model\GrupoProduto.cs" />
+    <Compile Include="Model\ItensCompra.cs" />
+    <Compile Include="Model\ItensVenda.cs" />
+    <Compile Include="Model\Produtos.cs" />
+    <Compile Include="Model\SubGrupoProduto.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\Vendas.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

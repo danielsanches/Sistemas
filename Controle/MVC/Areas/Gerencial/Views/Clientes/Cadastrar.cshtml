@@ -1,0 +1,74 @@
+﻿@model MVC.Areas.Gerencial.Models.Clientes.ClienteViewModel
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="page-header">Cadastrar<small>&emsp; Cliente</small></h3>
+
+@using (Html.BeginForm("Cadastrar", "Clientes", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <a href="@Url.Action("Index","Clientes")" class="btn btn-sm btn-primary">Voltar &emsp;<i class="glyphicon glyphicon-arrow-left"></i></a>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="NomeFantasia" class="col-lg-2 control-label">Nome Cliente</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", @placeholder = "ex: José da Silva Barbosa", @maxlength = 100 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="DataNascimento" class="col-lg-2 control-label">Data Nascimento</label>
+        <div class="col-lg-2">
+            @Html.TextBoxFor(x => x.DataNascimento, new { @class = "form-control calendario", @placeholder = "dd/mm/aaaa", @maxlength = 10 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Email" class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "cliente@cliente.com", @maxlength = 100 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Cpf" class="col-lg-2 control-label">CPF</label>
+        <div class="col-lg-2">
+            @Html.TextBoxFor(x => x.Cpf, new { @class = "form-control", @placeholder = "00022244410", @maxlength = 11 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="FoneMovel1" class="col-lg-2 control-label">Telefone Movel 1</label>
+        <div class="col-lg-3">
+            @Html.TextBoxFor(x => x.FoneMovel1, new { @class = "form-control foneMask", @placeholder = "67 99999-0000", @maxlength = 13 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="FoneMovel2" class="col-lg-2 control-label">Telefone Movel 2</label>
+        <div class="col-lg-3">
+            @Html.TextBoxFor(x => x.FoneMovel2, new { @class = "form-control foneMask", @placeholder = "67 99999-0000", @maxlength = 13 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="FoneFixo" class="col-lg-2 control-label">Telefone Fixo</label>
+        <div class="col-lg-3">
+            @Html.TextBoxFor(x => x.FoneFixo, new { @class = "form-control foneMask", @placeholder = "67 33333-0000", @maxlength = 13 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="BtnSalvar" class="col-lg-2 control-label"></label>
+        <div class="col-lg-5">
+            <button type="submit" id="BtnSalvar" class="btn btn-lg btn-success">Salvar &emsp;<i class="glyphicon glyphicon-floppy-saved"></i></button>
+        </div>
+    </div>
+}
+
