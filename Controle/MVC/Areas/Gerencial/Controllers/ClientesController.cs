@@ -11,9 +11,9 @@
     {
         public ClienteAppService _clienteAppService;
 
-        public ClientesController(ClienteAppService clienteAppService)
+        public ClientesController()
         {
-            _clienteAppService = clienteAppService;
+            _clienteAppService = new ClienteAppService();
         }
 
         public ActionResult Index()

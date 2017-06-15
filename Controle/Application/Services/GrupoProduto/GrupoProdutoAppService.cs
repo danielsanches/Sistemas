@@ -7,15 +7,17 @@
     using Domain.Interfaces;
     using Domain.Enum;
     using System.Collections.Generic;
+    using Infra.Reposiotry;
+
     public class GrupoProdutoAppService
     {
         private GrupoProdutoBusiness _grupoProdutoBusiness;
         private IRepository<GrupoProduto> _grupoProdutoRepository;
 
-        public GrupoProdutoAppService(IRepository<GrupoProduto> grupoProdutoRepository, GrupoProdutoBusiness grupoProdutoBusiness)
+        public GrupoProdutoAppService()
         {
-            _grupoProdutoRepository = grupoProdutoRepository;
-            _grupoProdutoBusiness = grupoProdutoBusiness;
+            _grupoProdutoRepository = new GrupoProdutoRepository();
+            _grupoProdutoBusiness = new GrupoProdutoBusiness();
         }
 
         public ResponseGrupoProduto Cadastrar(RequestGrupoProduto request)

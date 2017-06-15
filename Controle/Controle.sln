@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{2D19BD4A-05D3-464B-845F-C7F3B59DA4FE}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{DC917D07-3A61-425F-921A-763C16ED15AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlPdfReport", "HtmlPdfReport\HtmlPdfReport.csproj", "{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{27B77275-843D-46A3-A0E1-E75992067143}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,12 +60,18 @@ Global
 		{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
 		{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FCD1432-3CF4-46CE-A22D-1D8DF785480E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27B77275-843D-46A3-A0E1-E75992067143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B77275-843D-46A3-A0E1-E75992067143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B77275-843D-46A3-A0E1-E75992067143}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B77275-843D-46A3-A0E1-E75992067143}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{27B77275-843D-46A3-A0E1-E75992067143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B77275-843D-46A3-A0E1-E75992067143}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 7
+		SccNumberOfProjects = 8
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://danielsanchees.visualstudio.com/
 		SccLocalPath0 = .
@@ -85,5 +93,8 @@ Global
 		SccProjectUniqueName6 = HtmlPdfReport\\HtmlPdfReport.csproj
 		SccProjectName6 = HtmlPdfReport
 		SccLocalPath6 = HtmlPdfReport
+		SccProjectUniqueName7 = WpfApp\\WpfApp.csproj
+		SccProjectName7 = WpfApp
+		SccLocalPath7 = WpfApp
 	EndGlobalSection
 EndGlobal

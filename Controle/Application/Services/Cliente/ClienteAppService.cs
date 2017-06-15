@@ -7,16 +7,17 @@
     using System.Linq;
     using Domain.Enum;
     using System.Collections.Generic;
+    using Infra.Reposiotry;
 
     public class ClienteAppService
     {
         public ClienteBusiness _clienteBusiness;
         public IRepository<Cliente> _clienteRepository;
 
-        public ClienteAppService(IRepository<Cliente> clienteRepository, ClienteBusiness clienteBusiness)
+        public ClienteAppService()
         {
-            _clienteBusiness = clienteBusiness;
-            _clienteRepository = clienteRepository;
+            _clienteBusiness = new ClienteBusiness();
+            _clienteRepository = new ClienteRepository();
         }
 
         public ResponseCliente Alterar(RequestCliente request)
@@ -148,7 +149,8 @@
             _clienteBusiness.ValidarCadastro(new RequestClienteBusiness
             {
                 Cadastrar = cadastro,
-                Cliente = cliente
+                Cliente = cliente,
+                Clientes = _clienteRepository.ObterTodos().ToList()
             });
         }
     }

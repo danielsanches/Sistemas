@@ -8,5 +8,6 @@
         public string FoneFixo { internal get; set; }
         public string Celular { internal get; set; }
         public string Email { internal get; set; }
+        public string CpfCnpj { get; set; }
     }
 }

@@ -9,9 +9,9 @@
     {
         private readonly UsuarioService _usuarioService;
 
-        public AccountController(UsuarioService usuarioService)
+        public AccountController()
         {
-            _usuarioService = usuarioService;
+            _usuarioService = new UsuarioService();
         }
 
         public ActionResult Logar()

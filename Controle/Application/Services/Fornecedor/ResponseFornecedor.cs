@@ -10,7 +10,7 @@
             ListaFornecedores = new List<Fornecedor>();
         }
 
-        public string Mesagem { get; internal set; }
+        public string Mensagem { get; internal set; }
 
         public bool Sucesso { get; internal set; }
 

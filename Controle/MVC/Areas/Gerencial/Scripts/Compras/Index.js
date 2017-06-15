@@ -89,7 +89,7 @@ function formatChild(d) {
 }
 
 function getButtonsGrid(row) {
-    return "<a class=\"btn btn-primary btn-sm \"href=\"Compras/Remover/" + row.Id + "\">Remover&nbsp; <i class=\"glyphicon glyphicon-trash\"></i></a> ";
+    return "<a class=\"btn btn-primary btn-sm\" href=\"Compras/Remover/" + row.Id + "\">Remover&nbsp; <i class=\"glyphicon glyphicon-trash\"></i></a> ";
 }
 
 function PreencherParamentros() {

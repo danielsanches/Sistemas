@@ -5,6 +5,7 @@
     using Domain.Interfaces;
     using Domain.Model;
     using Estoque;
+    using Infra.Reposiotry;
     using Produto;
     using System;
     using System.Collections.Generic;
@@ -18,13 +19,12 @@
         private readonly EstoqueAppService _estoqueAppService;
         private readonly ProdutoAppService _produtoAppService;
 
-        public ComprasAppService(IRepository<Compra> compraRepository, ComprasBusiness comprasBusiness,
-            EstoqueAppService estoqueAppService, ProdutoAppService produtoAppService)
+        public ComprasAppService()
         {
-            _comprasBusiness = comprasBusiness;
-            _compraRepository = compraRepository;
-            _estoqueAppService = estoqueAppService;
-            _produtoAppService = produtoAppService;
+            _comprasBusiness = new ComprasBusiness();
+            _compraRepository = new CompraRepository();
+            _estoqueAppService = new EstoqueAppService();
+            _produtoAppService = new ProdutoAppService();
         }
 
         public ResponseCompra Cadastrar(Compra compra)

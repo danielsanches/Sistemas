@@ -5,7 +5,7 @@
 
     public class Contexto : DbContext
     {
-        public Contexto() : base("Name=ConnectionString") { }
+        public Contexto() : base("Name=BancoControleEntities") { }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

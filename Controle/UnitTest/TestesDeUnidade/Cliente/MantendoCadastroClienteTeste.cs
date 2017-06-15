@@ -14,13 +14,11 @@
     {
         private ClienteBusiness _clienteBusiness;
         private RequestClienteBusiness _requestClienteBusiness;
-        private Mock<IRepository<Cliente>> _moqClienteRepository;
 
         [TestInitialize]
         public void Initializer()
         {
-            _moqClienteRepository = new Mock<IRepository<Cliente>>();
-            _clienteBusiness = new ClienteBusiness(new Domain.Business.ValidacoesCadastro(), _moqClienteRepository.Object);
+            _clienteBusiness = new ClienteBusiness();
             CriarCenarioQueAtendeAoContexto();
         }
 

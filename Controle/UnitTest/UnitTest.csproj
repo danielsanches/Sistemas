@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TesteDeIntegracao\MantendoEstoqueTeste\CadastradoCompraComEstoqueTeste.cs" />
-    <Compile Include="TesteDeIntegracao\MantendoEstoqueTeste\LancandoVendaComEstoqueTeste.cs" />
     <Compile Include="TestesDeUnidade\Cliente\MantendoCadastroClienteTeste.cs" />
     <Compile Include="TestesDeUnidade\Compras\ValidandoCompraTestes.cs" />
     <Compile Include="TestesDeUnidade\Estoque\MantendoCadastroEstoqueTeste.cs" />
@@ -71,7 +70,6 @@
     <Compile Include="TestesDeUnidade\Produto\MantendoCadastroProdutoTeste.cs" />
     <Compile Include="TestesDeUnidade\SubGrupoProduto\MantendoCadastroSubGrupoTeste.cs" />
     <Compile Include="TestesDeUnidade\Usuario\EfetuandoLoginTeste.cs" />
-    <Compile Include="TestesDeUnidade\Vendas\LancandoVendasTeste.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj">
@@ -90,6 +88,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestesDeUnidade\Vendas\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using MVC.Areas.Gerencial.Models;
+using System.Web.Mvc;
 
 namespace MVC.Areas.Gerencial.Controllers
 {
@@ -7,7 +8,7 @@ namespace MVC.Areas.Gerencial.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new RelatorioViewModel());
         }
 
     }

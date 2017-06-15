@@ -1,9 +1,8 @@
-C:\TFS\Sistemas\Controle\HtmlPdfReport\obj\Debug\HtmlPdfReport.csprojResolveAssemblyReference.cache
-C:\TFS\Sistemas\Controle\HtmlPdfReport\bin\Debug\dll\System.Web.Mvc.dll
-C:\TFS\Sistemas\Controle\HtmlPdfReport\bin\Debug\HtmlPdfReport.dll
-C:\TFS\Sistemas\Controle\HtmlPdfReport\bin\Debug\HtmlPdfReport.pdb
-C:\TFS\Sistemas\Controle\HtmlPdfReport\bin\Debug\itextsharp.dll
-C:\TFS\Sistemas\Controle\HtmlPdfReport\bin\Debug\System.Web.Mvc.dll
-C:\TFS\Sistemas\Controle\HtmlPdfReport\bin\Debug\itextsharp.xml
-C:\TFS\Sistemas\Controle\HtmlPdfReport\obj\Debug\HtmlPdfReport.dll
-C:\TFS\Sistemas\Controle\HtmlPdfReport\obj\Debug\HtmlPdfReport.pdb
+C:\TFS\Controle\HtmlPdfReport\bin\Debug\dll\System.Web.Mvc.dll
+C:\TFS\Controle\HtmlPdfReport\bin\Debug\HtmlPdfReport.dll
+C:\TFS\Controle\HtmlPdfReport\bin\Debug\HtmlPdfReport.pdb
+C:\TFS\Controle\HtmlPdfReport\bin\Debug\itextsharp.dll
+C:\TFS\Controle\HtmlPdfReport\bin\Debug\System.Web.Mvc.dll
+C:\TFS\Controle\HtmlPdfReport\bin\Debug\itextsharp.xml
+C:\TFS\Controle\HtmlPdfReport\obj\Debug\HtmlPdfReport.dll
+C:\TFS\Controle\HtmlPdfReport\obj\Debug\HtmlPdfReport.pdb

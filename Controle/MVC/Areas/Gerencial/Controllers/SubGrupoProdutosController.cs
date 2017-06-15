@@ -9,17 +9,16 @@
     using System.Linq;
     using System.Web.Mvc;
 
-
     [Authorize]
     public class SubGrupoProdutosController : Controller
     {
         private readonly SubGrupoProdutoAppService _subGrupoProdutoAppService;
         private readonly GrupoProdutoAppService _grupoProdutoAppService;
 
-        public SubGrupoProdutosController(SubGrupoProdutoAppService subGrupoProdutoAppService, GrupoProdutoAppService grupoProdutoAppService)
+        public SubGrupoProdutosController()
         {
-            _subGrupoProdutoAppService = subGrupoProdutoAppService;
-            _grupoProdutoAppService = grupoProdutoAppService;
+            _subGrupoProdutoAppService = new SubGrupoProdutoAppService();
+            _grupoProdutoAppService = new GrupoProdutoAppService();
         }
 
         public ActionResult Index()

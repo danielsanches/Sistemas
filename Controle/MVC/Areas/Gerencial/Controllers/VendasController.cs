@@ -20,11 +20,11 @@
         private ProdutoAppService _produtoAppService;
         private ClienteAppService _clienteAppService;
 
-        public VendasController(VendasAppService vendasAppService, ProdutoAppService produtoAppService, ClienteAppService clienteAppService)
+        public VendasController()
         {
-            _vendasAppService = vendasAppService;
-            _clienteAppService = clienteAppService;
-            _produtoAppService = produtoAppService;
+            _vendasAppService = new VendasAppService();
+            _clienteAppService = new ClienteAppService();
+            _produtoAppService = new ProdutoAppService();
         }
 
         public ActionResult Index()

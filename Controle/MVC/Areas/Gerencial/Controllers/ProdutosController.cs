@@ -19,13 +19,11 @@
         private readonly SubGrupoProdutoAppService _subGrupoProdutoAppService;
         private readonly GrupoProdutoAppService _grupoProdutoAppService;
 
-        public ProdutosController(ProdutoAppService produtoAppService,
-            SubGrupoProdutoAppService subGrupoProdutoAppService,
-            GrupoProdutoAppService grupoProdutoAppService)
+        public ProdutosController()
         {
-            _produtoAppService = produtoAppService;
-            _subGrupoProdutoAppService = subGrupoProdutoAppService;
-            _grupoProdutoAppService = grupoProdutoAppService;
+            _produtoAppService = new ProdutoAppService();
+            _subGrupoProdutoAppService = new SubGrupoProdutoAppService();
+            _grupoProdutoAppService = new GrupoProdutoAppService();
         }
 
         public ActionResult Index()

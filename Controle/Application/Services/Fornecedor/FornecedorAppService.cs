@@ -7,16 +7,17 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Infra.Reposiotry;
 
     public class FornecedorAppService
     {
         private IRepository<Fornecedor> _fornecedorRepository;
         private FornecedorBusiness _fornecedorBusiness;
 
-        public FornecedorAppService(IRepository<Fornecedor> fornecedorRepository, FornecedorBusiness fornecedorBusiness)
+        public FornecedorAppService()
         {
-            _fornecedorRepository = fornecedorRepository;
-            _fornecedorBusiness = fornecedorBusiness;
+            _fornecedorRepository = new FornecedorRepository();
+            _fornecedorBusiness = new FornecedorBusiness();
         }
 
         public ResponseFornecedor Cadastrar(RequestFornecedor request)
@@ -25,26 +26,23 @@
             {
                 var fornecedor = new Fornecedor
                 {
-                    NomeFantasia = request.NomeFantazia,
-                    Celular = request.Celular,
-                    FoneFixo = request.FoneFixo,
-                    Email = request.Email
+                    NomeFantasia = request.NomeFantazia?.ToUpper(),
+                    Celular = request.Celular?.Replace("-", "").Replace(".", ""),
+                    FoneFixo = request.FoneFixo?.Replace("-", "").Replace(".", ""),
+                    CpfCnpj= request.CpfCnpj?.Replace(".", "").Replace("-", "").Replace("/", ""),
+                    Email = request.Email?.ToLower()
                 };
 
                 ValidarCamposFornecedor(fornecedor, true);
 
-                fornecedor.Celular = !string.IsNullOrWhiteSpace(fornecedor.Celular) ? fornecedor.Celular.Replace("-", "").Replace(".", "") : "";
-                fornecedor.FoneFixo = !string.IsNullOrWhiteSpace(fornecedor.FoneFixo) ? fornecedor.FoneFixo.Replace("-", "").Replace(".", "") : "";
-                fornecedor.NomeFantasia = fornecedor.NomeFantasia.ToUpper();
-
                 _fornecedorRepository.Cadastrar(fornecedor);
                 _fornecedorRepository.SaveChanges();
 
-                return new ResponseFornecedor { Sucesso = true, Mesagem = "Fornecedor cadastrado com sucesso." };
+                return new ResponseFornecedor { Sucesso = true, Mensagem = "Fornecedor cadastrado com sucesso." };
             }
             catch (Exception ex)
             {
-                return new ResponseFornecedor { Sucesso = false, Mesagem = ex.Message };
+                return new ResponseFornecedor { Sucesso = false, Mensagem = ex.Message };
             }
         }
 
@@ -54,26 +52,23 @@
             {
                 var fornecedor = _fornecedorRepository.Obter(request.Id);
 
-                fornecedor.NomeFantasia = request.NomeFantazia;
-                fornecedor.Celular = request.Celular;
-                fornecedor.FoneFixo = request.FoneFixo;
-                fornecedor.Email = request.Email;
+                fornecedor.NomeFantasia = request.NomeFantazia?.ToUpper();
+                fornecedor.Celular = request.Celular?.Replace("-", "").Replace(".", "");
+                fornecedor.FoneFixo = request.FoneFixo?.Replace("-", "").Replace(".", "");
+                fornecedor.Email = request.Email?.ToLower();
                 fornecedor.Status = request.Status;
+                fornecedor.CpfCnpj = request.CpfCnpj?.Replace(".", "").Replace("-", "").Replace("/", "");
 
                 ValidarCamposFornecedor(fornecedor);
 
-                fornecedor.Celular = !string.IsNullOrWhiteSpace(fornecedor.Celular) ? fornecedor.Celular.Replace("-", "").Replace(".", "") : "";
-                fornecedor.FoneFixo = !string.IsNullOrWhiteSpace(fornecedor.FoneFixo) ? fornecedor.FoneFixo.Replace("-", "").Replace(".", "") : "";
-
-                fornecedor.NomeFantasia = fornecedor.NomeFantasia.ToUpper();
                 _fornecedorRepository.Alterar(fornecedor);
                 _fornecedorRepository.SaveChanges();
 
-                return new ResponseFornecedor { Sucesso = true, Mesagem = "Fornecedor alterado com sucesso." };
+                return new ResponseFornecedor { Sucesso = true, Mensagem = "Fornecedor alterado com sucesso." };
             }
             catch (Exception ex)
             {
-                return new ResponseFornecedor { Sucesso = false, Mesagem = ex.Message };
+                return new ResponseFornecedor { Sucesso = false, Mensagem = ex.Message };
             }
         }
 
@@ -89,7 +84,7 @@
             }
             catch (Exception ex)
             {
-                return new ResponseFornecedor { Sucesso = false, Mesagem = ex.Message };
+                return new ResponseFornecedor { Sucesso = false, Mensagem = ex.Message };
             }
         }
 
@@ -103,7 +98,7 @@
             }
             catch (Exception ex)
             {
-                return new ResponseFornecedor { Sucesso = false, Mesagem = ex.Message };
+                return new ResponseFornecedor { Sucesso = false, Mensagem = ex.Message };
             }
         }
 
@@ -117,7 +112,7 @@
             }
             catch (Exception ex)
             {
-                return new ResponseFornecedor { Sucesso = false, Mesagem = ex.Message };
+                return new ResponseFornecedor { Sucesso = false, Mensagem = ex.Message };
             }
         }
 
@@ -133,7 +128,7 @@
             }
             catch (Exception ex)
             {
-                return new ResponseFornecedor { Sucesso = false, Mesagem = ex.Message };
+                return new ResponseFornecedor { Sucesso = false, Mensagem = ex.Message };
             }
         }
 

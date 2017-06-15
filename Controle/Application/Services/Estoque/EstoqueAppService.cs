@@ -6,16 +6,17 @@
     using Domain.Interfaces;
     using System.Linq;
     using System.Collections.Generic;
+    using Infra.Reposiotry;
 
     public class EstoqueAppService
     {
         private readonly EstoqueBusiness _estoqueBusiness;
         private readonly IRepository<Estoque> _estoqueRepository;
 
-        public EstoqueAppService(IRepository<Estoque> estoqueRepository, EstoqueBusiness estoqueBusiness)
+        public EstoqueAppService()
         {
-            _estoqueBusiness = estoqueBusiness;
-            _estoqueRepository = estoqueRepository;
+            _estoqueBusiness = new EstoqueBusiness();
+            _estoqueRepository = new EstoqueRepository();
         }
 
         internal void LancarEstoque(Estoque estoque)

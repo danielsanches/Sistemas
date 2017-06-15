@@ -12,9 +12,9 @@
     {
         private readonly GrupoProdutoAppService _grupoProdutoAppService;
 
-        public GrupoProdutoController(GrupoProdutoAppService grupoProdutoAppService)
+        public GrupoProdutoController()
         {
-            _grupoProdutoAppService = grupoProdutoAppService;
+            _grupoProdutoAppService = new GrupoProdutoAppService();
         }
 
         public ActionResult Index()

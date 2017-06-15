@@ -6,6 +6,13 @@
 
     public class FornecedorBusiness
     {
+        private ValidacoesCadastro _validar;
+
+        public FornecedorBusiness()
+        {
+            _validar = new ValidacoesCadastro();
+        }
+
         public void ValidarCadastro(RequestFornecedorBusiness request)
         {
             if (string.IsNullOrWhiteSpace(request.Fornecedor.NomeFantasia))
@@ -25,6 +32,9 @@
 
             if (!request.Cadastrar && request.ListaFornecedor.Any(x => x.Id != request.Fornecedor.Id && x.NomeFantasia.Trim().Equals(request.Fornecedor.NomeFantasia.Trim())))
                 throw new InvalidOperationException("A descrição informada já esta sendo usada. Favor informar outra descrição.");
+
+            if (!string.IsNullOrEmpty(request.Fornecedor.CpfCnpj) && !_validar.ValidarCpfCnpj(request.Fornecedor.CpfCnpj))
+                throw new InvalidOperationException("Favor informar um CPF ou CNPJ válido.");
         }
     }
 }

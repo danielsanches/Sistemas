@@ -8,6 +8,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Infra.Reposiotry;
 
     public class ProdutoAppService
     {
@@ -15,11 +16,11 @@
         private readonly IRepository<Produtos> _produtosRepository;
         private readonly EstoqueAppService _estoqueAppService;
 
-        public ProdutoAppService(IRepository<Produtos> produtosRepository, ProdutoBusiness produtoBusiness, EstoqueAppService estoqueAppService)
+        public ProdutoAppService()
         {
-            _produtoBusiness = produtoBusiness;
-            _produtosRepository = produtosRepository;
-            _estoqueAppService = estoqueAppService;
+            _produtoBusiness = new ProdutoBusiness();
+            _produtosRepository = new ProdutosRepository();
+            _estoqueAppService = new EstoqueAppService();
         }
 
         public ResponseProduto Cadastrar(RequestProduto request)

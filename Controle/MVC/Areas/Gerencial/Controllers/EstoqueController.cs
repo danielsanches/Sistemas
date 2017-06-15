@@ -12,10 +12,10 @@
         private readonly EstoqueAppService _estoqueAppService;
         private readonly ProdutoAppService _produtoAppService;
 
-        public EstoqueController(EstoqueAppService estoqueAppService, ProdutoAppService produtoAppService)
+        public EstoqueController()
         {
-            _estoqueAppService = estoqueAppService;
-            _produtoAppService = produtoAppService;
+            _estoqueAppService = new EstoqueAppService();
+            _produtoAppService = new ProdutoAppService();
         }
 
         public ActionResult Index()

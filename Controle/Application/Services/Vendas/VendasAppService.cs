@@ -6,6 +6,7 @@
     using Estoque;
     using System;
     using System.Linq;
+    using Infra.Reposiotry;
 
     public class VendasAppService
     {
@@ -13,11 +14,11 @@
         private readonly VendasBusiness _vendasBusiness;
         private readonly EstoqueAppService _estoqueAppService;
 
-        public VendasAppService(IRepository<Vendas> vendasRepository, VendasBusiness vendasBusiness, EstoqueAppService estoqueAppService)
+        public VendasAppService()
         {
-            _vendasRepository = vendasRepository;
-            _vendasBusiness = vendasBusiness;
-            _estoqueAppService = estoqueAppService;
+            _vendasRepository = new VendasRepository();
+            _vendasBusiness = new VendasBusiness();
+            _estoqueAppService = new EstoqueAppService();
         }
 
         public ResponseVendas Cadastrar(RequestVendas request)

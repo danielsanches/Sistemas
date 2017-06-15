@@ -12,9 +12,9 @@
     {
         private readonly FornecedorAppService _fornecedorAppService;
 
-        public FornecedorController(FornecedorAppService fornecedorAppService)
+        public FornecedorController()
         {
-            _fornecedorAppService = fornecedorAppService;
+            _fornecedorAppService = new FornecedorAppService();
         }
 
         public ActionResult Index()
@@ -41,11 +41,11 @@
 
             if (!resposta.Sucesso)
             {
-                AdicionarMensagem(resposta.Mesagem, resposta.Sucesso);
+                AdicionarMensagem(resposta.Mensagem, resposta.Sucesso);
                 return View(viewModel);
             }
 
-            AdicionarMensagem(resposta.Mesagem, resposta.Sucesso);
+            AdicionarMensagem(resposta.Mensagem, resposta.Sucesso);
             return RedirectToAction("Index", "Fornecedor");
         }
 
@@ -54,7 +54,7 @@
             var resposta = _fornecedorAppService.Obter(Convert.ToInt32(id));
             if (!resposta.Sucesso)
             {
-                AdicionarMensagem(resposta.Mesagem, resposta.Sucesso);
+                AdicionarMensagem(resposta.Mensagem, resposta.Sucesso);
                 return RedirectToAction("Index", "Fornecedor");
             }
 
@@ -87,11 +87,11 @@
 
             if (!resposta.Sucesso)
             {
-                AdicionarMensagem(resposta.Mesagem, resposta.Sucesso);
+                AdicionarMensagem(resposta.Mensagem, resposta.Sucesso);
                 return View(viewModel);
             }
 
-            AdicionarMensagem(resposta.Mesagem, resposta.Sucesso);
+            AdicionarMensagem(resposta.Mensagem, resposta.Sucesso);
             return RedirectToAction("Index", "Fornecedor");
         }
 

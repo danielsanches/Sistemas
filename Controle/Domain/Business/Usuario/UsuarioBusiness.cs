@@ -2,9 +2,9 @@
 {
     using System;
 
-    public class UsuarioBusiness
+    public static class UsuarioBusiness
     {
-        public void ValidarLogin(RequestUsuarioBusiness request)
+        public static void ValidarLogin(RequestUsuarioBusiness request)
         {
             if (string.IsNullOrWhiteSpace(request.NomeLogin))
                 throw new InvalidOperationException("Favor informar o nome de usuário.");
@@ -16,7 +16,7 @@
                 throw new InvalidOperationException("Nome de usuário ou senha incorretos.");
         }
 
-        public void ValidarCadastro(RequestUsuarioBusiness request)
+        public static void ValidarCadastro(RequestUsuarioBusiness request)
         {
             if (string.IsNullOrWhiteSpace(request.Nome))
                 throw new InvalidOperationException("Favor informar o nome de usuário.");

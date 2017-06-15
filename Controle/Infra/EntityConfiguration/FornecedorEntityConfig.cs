@@ -12,6 +12,10 @@
 
             HasKey(x => x.Id);
 
+            Property(x => x.Email).HasMaxLength(50);
+
+            Property(x => x.CpfCnpj).HasMaxLength(14);
+
             Property(x => x.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.NomeFantasia).HasMaxLength(100).IsRequired();

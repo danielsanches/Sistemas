@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfApp.Views.Usuario.LogInView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.Views.Usuario"
+        mc:Ignorable="d"
+        Title="LogInView" Height="295.18" Width="300"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <PasswordBox Name="TxtSenha" Height="23" Margin="62,137,59,0" VerticalAlignment="Top" MaxLength="8" TabIndex="2"/>
+        <TextBlock Margin="127,47,126,0" TextAlignment="Center" Text="usuário" VerticalAlignment="Top"/>
+        <TextBox Name="TxtUsuario" HorizontalAlignment="Left" Height="23" Margin="62,68,0,0" TextWrapping="NoWrap" MaxLength="12" VerticalAlignment="Top" Width="171" TabIndex="1"/>
+        <TextBlock Margin="127,116,126,0" TextAlignment="Center" Text="senha" VerticalAlignment="Top"/>
+        <Button Name="BtnLogin" Content="Login" Margin="62,198,59,0" VerticalAlignment="Top" Click="BtnLogin_Click" TabIndex="3"/>
+    </Grid>
+</Window>

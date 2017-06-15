@@ -101,6 +101,10 @@
       <Project>{2d19bd4a-05d3-464b-845f-c7f3b59da4fe}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Infra\Infra.csproj">
+      <Project>{D1197AC8-54EE-4708-8369-7C9645B32254}</Project>
+      <Name>Infra</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

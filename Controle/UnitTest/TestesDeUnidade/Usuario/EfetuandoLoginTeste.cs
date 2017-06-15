@@ -9,15 +9,13 @@
     public class EfetuandoLoginTeste
     {
         private RequestUsuarioBusiness _usuario;
-        private UsuarioBusiness _usuarioBusiness;
         private Criptografia _criptografia;
 
         [TestInitialize]
         public void Initializer()
         {
-            _usuarioBusiness = new UsuarioBusiness();
             _criptografia = new Criptografia();
-            var cript = _criptografia.Criptografar("senha123");
+            var cript = _criptografia.Criptografar("admin");
             var usuario = new Usuario { Nome = "admin", Senha = cript };
             _usuario = new RequestUsuarioBusiness
             {
@@ -31,21 +29,21 @@
         public void NaoConsigoLogarSemNomeDeUsuarioTeste()
         {
             _usuario.Nome = "";
-            _usuarioBusiness.ValidarLogin(_usuario);
+            UsuarioBusiness.ValidarLogin(_usuario);
         }
 
         [TestMethod, ExpectedException(typeof(InvalidOperationException))]
         public void NaoConsigoLogarSemSenhaTeste()
         {
             _usuario.Senha = "";
-            _usuarioBusiness.ValidarLogin(_usuario);
+            UsuarioBusiness.ValidarLogin(_usuario);
         }
 
         [TestMethod, ExpectedException(typeof(InvalidOperationException))]
         public void NaoConsigoLogarComUsuarioOuSenhaIncorretosTeste()
         {
             _usuario.Senha = "123Senha";
-            _usuarioBusiness.ValidarLogin(_usuario);
+            UsuarioBusiness.ValidarLogin(_usuario);
         }
     }
 }

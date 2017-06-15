@@ -5,16 +5,17 @@
     using Domain.Model;
     using System;
     using System.Linq;
+    using Infra.Reposiotry;
 
     public class UsuarioService
     {
         private IRepository<Usuario> _usuarioRepository;
         private Criptografia _cripto;
 
-        public UsuarioService(IRepository<Usuario> usuarioRepository, Criptografia cripto)
+        public UsuarioService()
         {
-            _usuarioRepository = usuarioRepository;
-            _cripto = cripto;
+            _usuarioRepository = new UsuarioRepository();
+            _cripto = new Criptografia();
         }
 
         public ResponseUsuario Logar(RequestUsuario request)
@@ -22,7 +23,7 @@
             try
             {
                 var usuario = _usuarioRepository.ObterPor(x => x.NomeLogin.Trim().Equals(request.NomeLogin)).FirstOrDefault();
-                new UsuarioBusiness().ValidarLogin(new RequestUsuarioBusiness
+                UsuarioBusiness.ValidarLogin(new RequestUsuarioBusiness
                 {
                     NomeLogin = request.NomeLogin,
                     Senha = request.Senha,
@@ -41,7 +42,7 @@
         {
             try
             {
-                new UsuarioBusiness().ValidarCadastro(new RequestUsuarioBusiness
+                UsuarioBusiness.ValidarCadastro(new RequestUsuarioBusiness
                 {
                     Nome = request.Nome,
                     NomeLogin = request.NomeLogin,

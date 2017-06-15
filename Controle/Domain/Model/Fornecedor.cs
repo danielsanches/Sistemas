@@ -17,8 +17,10 @@ namespace Domain.Model
 
         public string NomeFantasia { get; set; }
 
-        public string Status { get; set; }
+        public string CpfCnpj { get; set; }
 
+        public string Status { get; set; }
+        
         public string FoneFixo { get; set; }
 
         public string Celular { get; set; }

@@ -9,47 +9,53 @@
     <div class="page-header">
         <h3>Relatórios</h3>
     </div>
-   
 </div>
 
 @using (Html.BeginForm("Index", "Relatorio", FormMethod.Post, new { id = "formRelatorio" }))
 {
-    <button type="submit">Renderizar</button>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-lg-4">
+                <label for="ClienteId" class="control-label">Clientes</label>
+                @Html.DropDownListFor(x => x.ClienteId, new SelectList(Model.ListaClientes, "Id", "Nome", Model.ClienteId), "", new { @class = "form-control" })
+            </div>
 
-    <div class="control-group col-lg-2">
-        <label class="control-label">Período</label>
-        <div class="input-group date" id="datetimepickerInicio">
-            @Html.TextBoxFor(x => x.DataInicio, new { @class = "form-control", @placeholder = "dd/mm/aaaa", @maxlength = 10 })
-            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            <div class="col-lg-4">
+                <label for="FornecedorId" class="control-label">Fornecedor</label>
+                @Html.DropDownListFor(x => x.FornecedorId, new SelectList(Model.ListaFornecedores, "Id", "NomeFantasia", Model.FornecedorId), "", new { @class = "form-control" })
+            </div>
         </div>
     </div>
 
-    <div class="control-group col-lg-2">
-        <label class="control-label">&emsp;</label>
-        <div class="input-group date" id="datetimepickerFim">
-            @Html.TextBoxFor(x => x.DataFim, new { @class = "form-control", @placeholder = "dd/mm/aaaa", @maxlength = 10 })
-            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    <div class="row" style="margin-top:10px;">
+        <div class="form-group">
+            <div class="col-lg-2">
+                <label for="DataInicio">Período</label>
+                <div class="input-group date" id="datetimepickerInicio">
+                    @Html.TextBoxFor(x => x.DataInicio, new { @class = "form-control", @placeholder = "dd/mm/aaaa", @maxlength = 10 })
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-2">
+                <label for="DataFim">&emsp;</label>
+                <div class="input-group date" id="datetimepickerFim">
+                    @Html.TextBoxFor(x => x.DataFim, new { @class = "form-control", @placeholder = "dd/mm/aaaa", @maxlength = 10 })
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="control-group col-lg-4">
-        <label for="ClienteId" class="control-label">Clientes</label>
-        <div class="controls">
-            @Html.DropDownListFor(x => x.ClienteId, new SelectList(Model.ListaClientes, "Id", "Nome", Model.ClienteId), "", new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="control-group col-lg-4">
-        <label for="FornecedorId" class="control-label">Fornecedor</label>
-        <div class="controls">
-            @Html.DropDownListFor(x => x.FornecedorId, new SelectList(Model.ListaFornecedores, "Id", "NomeFantasia", Model.FornecedorId), "", new { @class = "form-control" })
-        </div>
-    </div>
-
-    <div class="control-group col-lg-12">
-        <div class="control-label">&nbsp;</div>
-        <div class="controls">
-            <a href="#" onclick="RecarregarComFiltro(); return false;" class="btn btn-info">Filtrar&nbsp; <i class="glyphicon glyphicon-filter"></i></a>
-            <a href="#" onclick="FiltroReset(); return false;" class="btn btn-default">Limpar&nbsp; <i class="glyphicon glyphicon-refresh"></i></a>
+    <div class="row" style="margin-top:10px;">
+        <div class="form-group">
+            <div class="col-lg-12">
+                <label>&nbsp;</label>
+                <button onclick="RecarregarComFiltro(); return false;" class="btn btn-info">Filtrar&nbsp; <i class="glyphicon glyphicon-filter"></i></button>
+                <button onclick="FiltroReset(); return false;" class="btn btn-default">Limpar&nbsp; <i class="glyphicon glyphicon-refresh"></i></button>
+            </div>
         </div>
     </div>
 }

@@ -20,13 +20,11 @@
         private readonly FornecedorAppService _fornecedorAppService;
         private readonly ProdutoAppService _produtoAppService;
 
-        public ComprasController(ComprasAppService comprasAppService,
-            FornecedorAppService fornecedorAppService,
-            ProdutoAppService produtoAppService)
+        public ComprasController()
         {
-            _comprasAppService = comprasAppService;
-            _fornecedorAppService = fornecedorAppService;
-            _produtoAppService = produtoAppService;
+            _comprasAppService = new ComprasAppService();
+            _fornecedorAppService = new FornecedorAppService();
+            _produtoAppService = new ProdutoAppService();
         }
 
         public ActionResult Index()
